@@ -2,7 +2,7 @@ logging:
   level:
     ROOT: INFO
     org.hibernate.SQL: INFO
-    fr.codecake.ecom: INFO
+    com.tutorial.general: INFO
 
 spring:
   application:
@@ -34,7 +34,7 @@ spring:
         connection:
           provider_disables_autocommit: true
         order_inserts: true
-        default_schema: general
+        default_schema: spring_postgres
     hibernate:
       ddl-auto: validate
       naming:
@@ -43,9 +43,9 @@ spring:
     open-in-view: false
   liquibase:
     change-log: classpath:db/changelog/master.xml
-    default-schema: general
+    default-schema: spring_postgres
     contexts: dev
-  #    drop-first: true
+#    drop-first: true
   security:
     oauth2:
       resourceserver:

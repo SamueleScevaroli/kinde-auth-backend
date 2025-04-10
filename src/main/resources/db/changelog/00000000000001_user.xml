@@ -4,12 +4,12 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <changeSet id="00000000000001-seq" author="codecake">
+    <changeSet id="00000000000001-seq" author="samusceva">
         <createSequence sequenceName="user_sequence" startValue="1" incrementBy="1"/>
     </changeSet>
 
-    <changeSet id="00000000000001-user" author="codecake">
-        <createTable tableName="ecommerce_user">
+    <changeSet id="00000000000001-user" author="samusceva">
+        <createTable tableName="auth_user">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -34,7 +34,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="00000000000001-authority" author="codecake">
+    <changeSet id="00000000000001-authority" author="samusceva">
         <createTable tableName="authority">
             <column name="name" type="varchar(50)">
                 <constraints primaryKey="true" nullable="false"/>
@@ -62,7 +62,7 @@
                                  baseTableName="user_authority"
                                  constraintName="fk_user_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="ecommerce_user"/>
+                                 referencedTableName="auth_user"/>
         <loadData
                 file="db/data/authority.csv"
                 separator=";"
