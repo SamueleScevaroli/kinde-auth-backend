@@ -45,7 +45,7 @@ spring:
     change-log: classpath:db/changelog/master.xml
     default-schema: spring_postgres
     contexts: dev
-#    drop-first: true
+  #    drop-first: true
   security:
     oauth2:
       resourceserver:
@@ -76,7 +76,7 @@ application:
     allow-credentials: false
     max-age: 300
   kinde:
-    api: https://samuelescevaroli.kinde.com
+    api: ${KINDE_API_URL}
     client-id: ${KINDE_CLIENT_ID}
     client-secret: ${KINDE_CLIENT_SECRET}
-    audience: https://samuelescevaroli.kinde.com/api
+    audience: ${KINDE_API_URL}/api
