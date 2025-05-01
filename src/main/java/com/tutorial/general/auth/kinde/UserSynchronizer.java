@@ -2,7 +2,6 @@ package com.tutorial.general.auth.kinde;
 
 import com.tutorial.general.auth.model.AuthenticatedUser;
 import com.tutorial.general.auth.model.User;
-import com.tutorial.general.auth.model.UserAddressToUpdate;
 import com.tutorial.general.auth.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.jwt.Jwt;
@@ -46,9 +45,5 @@ public class UserSynchronizer {
     private void updateUser(User user, User existingUser) {
         existingUser.updateFromUser(user);
         userService.save(existingUser);
-    }
-
-    public void updateAddress(UserAddressToUpdate userAddressToUpdate) {
-        userService.updateAddress(userAddressToUpdate.userPublicId(), userAddressToUpdate);
     }
 }

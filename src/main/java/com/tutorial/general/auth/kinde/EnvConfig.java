@@ -9,6 +9,5 @@ public class EnvConfig {
         Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
         System.setProperty("KINDE_CLIENT_ID", dotenv.get("KINDE_CLIENT_ID"));
         System.setProperty("KINDE_CLIENT_SECRET", dotenv.get("KINDE_CLIENT_SECRET"));
-        System.setProperty("KINDE_API_URL", dotenv.get("KINDE_API_URL"));
     }
 }

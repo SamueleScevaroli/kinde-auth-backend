@@ -21,10 +21,6 @@
             <column name="email" type="varchar(255)">
                 <constraints unique="true" nullable="true" uniqueConstraintName="ux_user_email"/>
             </column>
-            <column name="address_street" type="varchar(255)"/>
-            <column name="address_zip_code" type="varchar(255)"/>
-            <column name="address_city" type="varchar(255)"/>
-            <column name="address_country" type="varchar(255)"/>
             <column name="image_url" type="varchar(256)"/>
             <column name="last_seen" type="timestamp">
                 <constraints nullable="false"/>

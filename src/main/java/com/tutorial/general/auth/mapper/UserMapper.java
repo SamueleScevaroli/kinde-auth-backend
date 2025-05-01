@@ -14,16 +14,8 @@ import org.mapstruct.Mapping;
         componentModel = "spring")
 public interface UserMapper {
 
-    @Mapping(source = "addressStreet", target = "userAddress.street")
-    @Mapping(source = "addressCity", target = "userAddress.city")
-    @Mapping(source = "addressZipCode", target = "userAddress.zipCode")
-    @Mapping(source = "addressCountry", target = "userAddress.country")
     User toModel(UserEntity userEntity);
 
-    @Mapping(source = "userAddress.street", target = "addressStreet")
-    @Mapping(source = "userAddress.city", target = "addressCity")
-    @Mapping(source = "userAddress.zipCode", target = "addressZipCode")
-    @Mapping(source = "userAddress.country", target = "addressCountry")
     UserEntity toEntity(User user);
 
     UserDto toDto(User user);

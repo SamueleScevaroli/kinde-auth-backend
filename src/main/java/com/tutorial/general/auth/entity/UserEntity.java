@@ -40,18 +40,6 @@ public class UserEntity extends AbstractAuditingEntity<Long> {
     @Column(name = "public_id")
     private UUID publicId;
 
-    @Column(name = "address_street")
-    private String addressStreet;
-
-    @Column(name = "address_city")
-    private String addressCity;
-
-    @Column(name = "address_zip_code")
-    private String addressZipCode;
-
-    @Column(name = "address_country")
-    private String addressCountry;
-
     @Column(name = "last_seen")
     private Instant lastSeen;
 

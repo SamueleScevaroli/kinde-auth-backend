@@ -37,7 +37,6 @@ public class User {
     private Set<String> authorities;
 
     private Long dbId;
-    private UserAddress userAddress;
     private Instant lastSeen;
 
     public void updateFromUser(User user) {

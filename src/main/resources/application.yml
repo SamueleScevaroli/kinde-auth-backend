@@ -34,7 +34,7 @@ spring:
         connection:
           provider_disables_autocommit: true
         order_inserts: true
-        default_schema: spring_postgres
+        default_schema: kinde_postgres
     hibernate:
       ddl-auto: validate
       naming:
@@ -43,9 +43,9 @@ spring:
     open-in-view: false
   liquibase:
     change-log: classpath:db/changelog/master.xml
-    default-schema: spring_postgres
+    default-schema: kinde_postgres
     contexts: dev
-  #    drop-first: true
+    drop-first: true
   security:
     oauth2:
       resourceserver:
@@ -76,7 +76,7 @@ application:
     allow-credentials: false
     max-age: 300
   kinde:
-    api: ${KINDE_API_URL}
+    api: https://samuelescevaroli.kinde.com
     client-id: ${KINDE_CLIENT_ID}
     client-secret: ${KINDE_CLIENT_SECRET}
-    audience: ${KINDE_API_URL}/api
+    audience: https://samuelescevaroli.kinde.com/api

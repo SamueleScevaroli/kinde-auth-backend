@@ -2,7 +2,6 @@ package com.tutorial.general.auth.service.impl;
 
 import com.tutorial.general.auth.mapper.UserMapper;
 import com.tutorial.general.auth.model.User;
-import com.tutorial.general.auth.model.UserAddressToUpdate;
 import com.tutorial.general.auth.repository.UserRepository;
 import com.tutorial.general.auth.service.UserService;
 import jakarta.validation.Valid;
@@ -33,23 +32,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> get(UUID userPublicId) {
-        return userRepository.findOneByPublicId(userPublicId)
-                .map(userMapper::toModel);
-    }
-
-    @Override
     public Optional<User> getOneByEmail(String userEmail) {
         return userRepository.findByEmail(userEmail)
                 .map(userMapper::toModel);
-    }
-
-    @Override
-    public void updateAddress(UUID userPublicId, UserAddressToUpdate userAddress) {
-        userRepository.updateAddress(userPublicId,
-                userAddress.userAddress().street(),
-                userAddress.userAddress().city(),
-                userAddress.userAddress().country(),
-                userAddress.userAddress().zipCode());
     }
 }

@@ -5,7 +5,6 @@ import com.tutorial.general.auth.kinde.UserReader;
 import com.tutorial.general.auth.kinde.UserSynchronizer;
 import com.tutorial.general.auth.model.AuthenticatedUser;
 import com.tutorial.general.auth.model.User;
-import com.tutorial.general.auth.model.UserAddressToUpdate;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,17 +25,6 @@ public class UsersApplicationService {
         userSynchronizer.syncWithIdp(jwtToken, forceResync);
         return userReader.getByEmail(AuthenticatedUser.username().username())
                 .orElseThrow();
-    }
-
-    @Transactional(readOnly = true)
-    public User getAuthenticatedUser() {
-        return userReader.getByEmail(AuthenticatedUser.username().username())
-                .orElseThrow();
-    }
-
-    @Transactional
-    public void updateAddress(UserAddressToUpdate userAddressToUpdate) {
-        userSynchronizer.updateAddress(userAddressToUpdate);
     }
 
 }
